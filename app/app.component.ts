@@ -3,7 +3,8 @@ import { ProfileComponent } from './components/profile.component';
 import { GithubService } from './services/github.service';
 
 @Component({
+    moduleId: module.id,
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1><profile></profile>'
+    templateUrl: 'app.component.html'
 })
 export class AppComponent { }
