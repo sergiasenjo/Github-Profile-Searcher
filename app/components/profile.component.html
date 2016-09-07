@@ -1,3 +1,13 @@
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter A Github Username..." name="username" [(ngModel)]="username" (keyup)="searchUser()" >
+            </div>
+        </form>
+    </div>
+</div>
+
 <div *ngIf="user">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -25,9 +35,27 @@
                         <li class="list-group-item">Member since: {{ user.created_at }}</li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+            </div>
+        </div>
+    </div>
 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Repos</h3>
+        </div>
+        <div class="panel-body">
+            <div *ngFor="let repo of repos">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h4><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></h4>
+                        <p>{{ repo.description }}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="label label-primary">{{ repo.watchers }} Watchers</span>
+                        <span class="label label-success">{{ repo.forks }} Forks</span>
+                    </div>
                 </div>
+                <hr>
             </div>
         </div>
     </div>

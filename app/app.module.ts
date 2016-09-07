@@ -6,9 +6,10 @@ import { ProfileComponent } from './components/profile.component';
 
 import { GithubService } from './services/github.service';
 import { HttpModule }    from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [ BrowserModule, HttpModule ],
+  imports: [ BrowserModule, HttpModule, FormsModule ],
   declarations: [ AppComponent, ProfileComponent ],
   providers: [ GithubService ],
   bootstrap: [ AppComponent ]
